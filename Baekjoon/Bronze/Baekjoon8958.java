@@ -6,27 +6,22 @@ import java.util.StringTokenizer;
 
 public class Main {
 public static void main(String[] args) throws IOException {
-
+//nexttoken은 length로 불러내도 횟수가 차감된다 
            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     //       BufferedWriter bw= new BufferedWriter(new OutputStreamWriter(System.out));
           //StringTokenizer?
+           int t = Integer.parseInt(br.readLine());
            int sum =0;
-          StringTokenizer st = new StringTokenizer(br.readLine(),"X");
-             int arr[] = new int[st.countTokens()];
+           int save = 0;
+         for(int i=0; i<t;i++) {
+        	 sum =0;
+        	 save =0;
+           StringTokenizer st = new StringTokenizer(br.readLine(),"X");
              	int count = st.countTokens();
-//length를 써도 카운트가 차감된다
-//          System.out.println(st.nextToken().length());
-//     
-//          System.out.println(st.countTokens());
-//          System.out.println(st.nextToken());
-//         
-//          System.out.println(st.countTokens());         
-//          System.out.println(st.nextToken());
-          int save = 0;
-             for(int i=0; i<count; i++) {
+        
+             for(int j=0; j<count; j++) {
         	save = st.nextToken().length();
         	sum = sum+ save*(save+1)/2;
-        	//sum = sum에 더하는 걸 실수함 
+             }System.out.println(sum);
           }
-          System.out.println(sum);
 }}
