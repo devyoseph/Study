@@ -1,0 +1,47 @@
+@font-face{
+  font-family: "Jua";
+  src: url('../fonts/BMJUA_otf.otf');
+}
+body{
+  background-color: #f0e8d9;
+}
+* {
+  box-sizing: border-box;
+  font-family: "Jua";
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid;
+  color:#58595b;
+}
+#title{
+  font-size: 64px;
+  margin-top: 75px;
+  text-align: center;
+}
+#title2{
+  font-size: 32px;
+  margin-top:30px;
+  text-align: center;
+  margin-bottom: 75px;
+}
+.main{
+  background-color: white;
+  background-position: cover;
+  width:300px;
+}
+.images{
+  width:300px;
+  height:200px;
+  background-position: cover;
+}
+.smalltitle{
+  text-align: center;
+}
+.contents{
+  padding:20px;
+}
+.link{
+  text-align: center;
+  color:#0000ee;
+  margin-top: 16px;
+}  
