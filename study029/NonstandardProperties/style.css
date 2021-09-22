@@ -1,0 +1,18 @@
+[status] {
+  padding: 5px 10px;
+}
+
+[status="교육중"] {
+  background-color: #FF6767;
+  color: #FFFFFF;
+}
+
+[status="업무중"] {
+  background-color: #5f62ff;
+  color: #FFFFFF;
+}
+
+[status="퇴근"] {
+  background-color: #07c456;
+  color: #FFFFFF;
+}
