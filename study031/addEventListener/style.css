@@ -1,0 +1,13 @@
+[data-nonstandard]{
+    color: white;
+    margin: 10px;
+}
+[data-nonstandard="Javascript"]{
+    background-color: red;
+}
+[data-nonstandard="non-standard"]{
+    background-color:blue;
+}
+[data-nonstandard="properties"]{
+    background-color: green;
+}
