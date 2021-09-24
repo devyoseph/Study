@@ -1,0 +1,26 @@
+button{
+    margin: 10px;
+    color: white;
+}
+#A{
+    background-color: red;
+}
+#B{
+    background-color:blue;
+}
+#C{
+    background-color: green;
+}
+#A.change{
+    background-color: red;
+    padding: 10px;
+}
+#B.change{
+    background-color: blue;
+    padding: 10px;
+}
+
+#C.change{
+    background-color: green;
+    padding: 10px;
+}
