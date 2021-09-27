@@ -8,7 +8,7 @@ class App{
         this.ctx = this.canvas.getContext('2d');
 
         document.body.appendChild(this.canvas);
-
+//바인드 활용
         window.addEventListener('resize', this.resize.bind(this), false);
         this.resize(); //리사이즈가 이벤트를 거치지 않아도 발동하기 위함
 
