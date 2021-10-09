@@ -1,0 +1,25 @@
+import java.io.*;
+import java.util.StringTokenizer;
+
+public class Main {
+public static void main(String[] args) throws IOException {
+	   BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	   StringBuilder sb = new StringBuilder();
+	   StringTokenizer st;
+	   int N = Integer.parseInt(br.readLine());
+	   for(int i = 0; i<N; i++) {
+		   st = new StringTokenizer(br.readLine());
+	   int repeat = Integer.parseInt(st.nextToken());
+	   String s = st.nextToken();
+	   int length = s.length();
+	   for(int j =0; j<length; j++) {
+		  for(int k =0; k<repeat;k++) {
+		   sb.append(s.charAt(j));}
+	   }
+	   System.out.println(sb);
+	   sb.delete(0, sb.length());
+	   }
+	}
+}
+
+
