@@ -24,7 +24,7 @@ public static void main(String[] args) throws IOException {
 // 	   BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 // 	   		 String N= br.readLine();
 // 	         for(int i =0; i<26; i++) {
-// 	        	 System.out.print(N.indexOf((char)(96+i))+" ");
+// 	        	 System.out.print(N.indexOf((char)(97+i))+" ");
 // 	         }
 	         
 // 	}
