@@ -55,3 +55,53 @@ public static void main(String[] args) throws IOException{
 //계산한 값을 뒤집어서 출력한다
 }	 
 }
+
+
+//개선: 배열 사용
+// import java.io.*;
+// import java.util.StringTokenizer;
+// public class Main {
+// public static void main(String[] args) throws IOException{
+// 	 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+// 	 int[] A = new int[10001];
+// 	 int[] B = new int[10001];
+// 	 StringBuilder Sum = new StringBuilder();
+// 	 int lengthA, lengthB, length;
+// 	 boolean upper = false;
+// 	 String a,b;
+// 	 StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+// 	 a = st.nextToken();
+// 	 b = st.nextToken();
+// 	 lengthA = a.length();
+// 	 lengthB = b.length();
+// 	 for(int i=0; i<lengthA; i++) {
+// 		 A[lengthA-i-1] = Character.getNumericValue(a.charAt(i));
+// 	 }
+// 	 for(int i=0; i<lengthB; i++) {
+// 		 B[lengthB-i-1] = Character.getNumericValue(b.charAt(i));
+// 	 }
+// 	 if(lengthA>=lengthB) {
+// 		 length = lengthA;
+// 	 } else { length = lengthB;}
+// 	 for(int i=0; i<length; i++) {
+// 		 A[i] = A[i]+B[i];
+// 	 }
+// 	 for(int i=0; i<length; i++) {
+// 		 if(upper == true) {
+// 			 A[i] ++;
+// 			 upper = false;
+// 		 }
+// 		 if(A[i]>=10) {
+// 			 upper = true;
+// 			 A[i] -=10;
+// 		 }
+// 	 }
+// 	for(int i=0; i<length;i++) {
+// 		Sum.append(A[i]);
+// 	}
+// 	if(upper == true) {
+// 		Sum.append(1);
+// 	}
+// 	System.out.print(Sum.reverse().toString());
+// }
+// }
