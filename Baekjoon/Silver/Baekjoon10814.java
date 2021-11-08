@@ -21,3 +21,21 @@ public static void main(String[] args) throws IOException{
 		}
 	}
 }}
+
+
+// import java.io.*;
+// import java.util.*;
+// public class Main {
+// public static void main(String[] args) throws IOException{
+// 	Scanner sc = new Scanner(System.in);
+// 	List<String>[] arr = new ArrayList[201];
+// 	for (int i = 1; i < 201; i++)arr[i] = new ArrayList<String>();
+// 	int N=sc.nextInt();
+// 	for(int i=0;i<N;i++) {
+// 		int index=sc.nextInt();
+// 		arr[index].add(sc.next());
+// 	}
+// 	for(int i=1;i<201;i++)
+// 		for(int j=0;j<arr[i].size();j++)
+// 			System.out.println(i+" "+arr[i].get(j));
+// }}
