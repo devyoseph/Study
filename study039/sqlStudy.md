@@ -96,5 +96,5 @@ TEXT(문자열)인 경우 내용을 ' ' 안에 작성합니다
 
  // SELECT * FROM main.main WHERE Variable_category='Financial ratios';
  
-[공부내용](https://blog.naver.com/josephdev123)
+[공부내용](https://blog.naver.com/josephdev123/222574130179)
  
