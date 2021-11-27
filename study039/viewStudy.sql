@@ -1,0 +1,2 @@
+CREATE VIEW TOP5_Salary AS
+SELECT * FROM main.practice ORDER BY Sales DESC LIMIT 5;
