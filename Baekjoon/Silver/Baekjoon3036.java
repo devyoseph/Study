@@ -19,3 +19,22 @@ public class Main {
 			System.out.println(LCM/ring[i]+"/"+LCM/first);
 		}
 }}
+
+
+//다른 
+// import java.util.*;
+// public class Main {
+//     static int GCD(int x, int y) {
+// 		if(x==0)return y;
+// 		return GCD(y%x,x);
+// 	}
+// 	public static void main(String[] args) {
+// 		Scanner sc = new Scanner(System.in);
+// 		int N = sc.nextInt();
+// 		int first = sc.nextInt();
+// 		int[] ring = new int[N-1];
+// 		for(int i=0;i<N-1;i++) {
+// 			ring[i]=sc.nextInt();
+// 			int gcd = GCD(first,ring[i]);
+// 			System.out.println(first/gcd+"/"+ring[i]/gcd);
+// }}}
