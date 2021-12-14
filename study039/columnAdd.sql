@@ -1,0 +1,15 @@
+ALTER TABLE main.table_new ADD weight INT NULL;
+
+ALTER TABLE main.table_new
+RENAME COLUMN id TO `순서`;
+
+ALTER TABLE main.table_new DROP COLUMN weight;
+
+ALTER TABLE main.table_new MODIFY age TINYINT NOT NULL;
+
+ALTER TABLE main.table_new
+MODIFY age TINYINT DEFAULT 30;
+
+ALTER TABLE main.table_new
+ADD `수정 시간`
+DATETIME NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
