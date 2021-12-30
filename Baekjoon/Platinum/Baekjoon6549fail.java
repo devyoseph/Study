@@ -8,13 +8,16 @@ public class Main {
 		if(N>stack.peek()) {
 			stack.push(N);
 			stack2.push(now);
+		//	System.out.println("add"+" "+N+" "+now);
 			return;
 		}
 		int last = now;
 		while(N<stack.peek()) {
 			last=stack2.pop();
 			max=Math.max(stack.pop()*(now-last), max);
+//			System.out.println(max);
 		}
+	//	System.out.println("pop"+" "+N+" "+last);
 		if(N==stack.peek()) return;
 		else {
 			stack.push(N);
@@ -29,13 +32,14 @@ public class Main {
 			st=new StringTokenizer(br.readLine()," ");
 			int n =Integer.parseInt(st.nextToken());
 			if(n==0) break;
-			stack.push(0);
+			stack.push(-1);
+			stack2.push(0);
 			int i=1;
 			while(st.hasMoreTokens()) {
 				getMax(Integer.parseInt(st.nextToken()),i);
 				i++;
 			}
-			getMax(0,i);
+			getMax(-1,i);
 			System.out.println(max);
 			stack.clear();
 		}
