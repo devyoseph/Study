@@ -1,37 +1,31 @@
-import java.io.*;
 import java.util.*;
 public class Main {
 	static long MOD = 1000000007;
-	static Long[][] dp;
+	static Long[][] dp=new Long[10001][10001];
 	static int[] arr;
 	static int sum=1;
 	
-	static long GCD(int start, int last, int number) {
-		if(start>=last || number>=10000) return 1;
+	static long GCD(int start, int last, int num) {
+		if(start>=last || num>=10000) return 1;
 		int min=10001;
-		int new_start=0;
-		int new_last=last;
-		boolean ing=false;
+		int last2=last;
 		boolean found =false;
 		for(int i=start;i<last;i++) {
-			if(!ing && arr[i]>number) {
+			if(!found && arr[i]>num) {
+				found = true;
+				start=i;
 				min=Math.min(min, arr[i]);
-				ing = true;
-				found=true;
-				new_start=i;
-			}else if(ing && arr[i]<=number) {
-				ing=false;
-				new_last=i;
+			}else if(found && arr[i]<=num) {
+				last2=i;
 				i=last;
-				break;
-			}else if(ing && arr[i]>number) {
+			}else if(found) {
 				min=Math.min(min, arr[i]);
 			}
 		}
 		if(found) {
-			sum*=pow(new_last-new_start,min-number)%MOD;
+			sum*=pow(last2-start,min-num)%MOD;
 		}
-		return GCD(new_start,new_last,min)+GCD(new_last,last,number);
+		return GCD(start,last2,min)+GCD(last2,last,num);
 	}
 	static long pow(int N,int ex) {
 		if(ex==0) return 1;
@@ -46,7 +40,6 @@ public class Main {
 		return dp[N][ex]%MOD;
 	}
 	public static void main(String[] args) {
-	dp=new Long[10001][10001]; //팩토 / 승
 	dp[0][1]=1L;
 	for(int i=1;i<10001;i++) {
 			dp[i][0]=1L;
