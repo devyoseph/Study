@@ -22,3 +22,31 @@ print("{0:010.2f}".format(3.1412412412))
 
 print("{ {0:.1f}  }".format(98.5))
 
+x=10
+def cal(a,b):
+    a=5
+    c=a+b
+    return c;
+print(cal(x,5)) # 10
+print(x) # 10 (5가 아니다)
+
+def cal(*args):
+    total=0
+    for i in args:
+        total+=i
+    return total
+print(cal(1,23,3))
+
+def cal_sum(**params):
+    for k in params.keys():
+        print("{0}: {1}".format(k,params[k]))
+cal_sum(x=1,y=2,z=3)
+
+def outer_func():
+    id=0;
+
+    def inner_func():
+        nonlocal id
+        id+=1
+        return id
+    return inner_func
