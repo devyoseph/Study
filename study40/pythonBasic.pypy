@@ -50,3 +50,8 @@ def outer_func():
         id+=1
         return id
     return inner_func
+    
+def keyword(name,age,skill):
+    print(name,age,skill)
+keyword("jo",30,"python")
+keyword(age=30,name="jo",skill="python") # 결과값이 같다
