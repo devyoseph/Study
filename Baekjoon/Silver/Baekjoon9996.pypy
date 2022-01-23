@@ -1,0 +1,19 @@
+def isSame(sentence):
+    if len(sentence)<len_left+len_right:
+        return False
+    elif pattern[0] == sentence[0:len_left] and pattern[1] == sentence[-len_right:]:
+        return True
+    else:
+        return False
+    
+N = int(input())
+
+pattern = input().split('*')
+len_left, len_right = len(pattern[0]), len(pattern[1])
+
+while N > 0:
+    N -= 1
+    if isSame(input()):
+        print('DA')
+    else:
+        print('NE')
