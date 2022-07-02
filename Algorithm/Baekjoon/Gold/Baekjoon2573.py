@@ -5,6 +5,7 @@ N, M = map(int, input().split())
 arr = []
 
 
+# 빙산 카운트를 위한 dfs
 def dfs(r, c, visit, N, M):
     visit[r][c] = True
 
@@ -20,7 +21,7 @@ def dfs(r, c, visit, N, M):
 
         dfs(row, col, visit, N, M)
 
-
+# 카운트를 위한 반복문: dfs 호출로 체크
 def count_ice(arr, visit):
     global N, M
     count = 0
@@ -34,6 +35,7 @@ def count_ice(arr, visit):
 
     return count
 
+# 빙산을 녹게하는 메서드 
 def melt(arr):
     global N, M
     record = []
