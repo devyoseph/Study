@@ -1,0 +1,70 @@
+from pprint import pprint
+
+
+def solution(alp, cop, problems):
+    # FINISH = len(problems)
+    # MIN = float("inf")
+    #
+    # # 차이를 계산해주는 메서드
+    def calDef(now_alp, now_cop, nxt_alp, nxt_cop):
+        diff_alp = 0 if nxt_alp <= now_alp else nxt_alp - now_alp
+        diff_cop = 0 if nxt_cop <= now_cop else nxt_cop - now_cop
+        # if diff_alp + diff_cop < time:
+        #     return time
+
+        return diff_alp + diff_cop
+    #
+    # # hubo : 현재 자유롭게 이동할 수 있는 문제(정렬된 상태, 효율 비교)
+    # # original : 원본
+    # # FINISH : 모두 다 골랐다면 depth == FINISH
+    # def dfs(depth, alp, cop, hubo, origin, FINISH, sum):
+    #     if depth == FINISH:
+    #         global MIN
+    #         MIN = min(MIN, sum)
+    #         return
+
+    ## dp? 최소 경로 생각하다 DP 떠올리기
+    global ALP, COP, ARR, MIN
+    #MIN = float("inf")
+    ALP = COP = 0
+
+    for p in problems:
+        if ALP < p[0]:
+            ALP = p[0]
+        if COP < p[1]:
+            COP = p[1]
+
+    # 경계값 벗어나는 것은 1 배열만 배분
+    ARR = [[0 for _ in range(COP+1)] for __ in range(ALP+1)]
+
+    # 기본 거리 로드
+    for i in range(ALP+1):
+        for j in range(COP+1):
+            ARR[i][j] = calDef(alp, cop, i, j)
+
+    # problem 초기값 로드
+    for p in problems:
+        ARR[p[0]][p[1]] = min(calDef(alp, cop, p[0], p[1]), ARR[p[0]][p[1]])
+
+    # DP
+    for p in problems:
+        for i in range(p[0], ALP+1):
+            for j in range(p[1], COP+1):
+                global nxt_alp, nxt_cop
+                nxt_alp = i + p[2]
+                nxt_cop = j + p[3]
+
+                if nxt_alp > ALP:
+                    nxt_alp = ALP
+                if nxt_cop > COP:
+                    nxt_cop = COP
+                if ARR[i][j] + p[4] < ARR[nxt_alp][nxt_cop]:
+                    ARR[nxt_alp][nxt_cop] = ARR[i][j] + p[4]
+                    #print(nxt_alp, nxt_cop, p[4], ARR[i][j] + p[4])
+    # for i in range(ALP, ALP+1):
+    #     for j in range(COP, COP+1):
+    #         MIN = min(MIN, ARR[i][j])
+    return ARR[ALP][COP]
+
+pprint(solution(10, 10, [[10,15,2,1,2],[20,20,3,3,4]]))
+pprint(solution(0,0,[[0,0,2,1,2],[4,5,3,1,2],[4,11,4,0,2],[10,4,0,4,2]]))
