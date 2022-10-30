@@ -1,0 +1,37 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		ArrayList<Integer> a = new ArrayList<>();
+		int N = Integer.parseInt(st.nextToken());
+		int K = Integer.parseInt(st.nextToken());
+		
+		st = new StringTokenizer(br.readLine());
+		
+		int[] arr = new int[N];
+		
+		for(int i=0; i<N; i++) {
+			arr[i] = Integer.parseInt(st.nextToken());
+		}
+		int sum = 0;
+		
+		for(int i=0; i<N-1; i++) {
+			int now = arr[i+1] - arr[i];
+			sum += now;
+			a.add(now);
+		}
+		Collections.sort(a);
+		while(--K > 0) {
+			int s = a.size();
+			int now = a.get(s-1);
+			sum -= now;
+			a.remove(s-1);
+		}
+		System.out.println(sum);
+	}
+
+}
